@@ -1,7 +1,5 @@
-import { IncomingRequestCfProperties } from "@cloudflare/workers-types"
-
-import { nanoid } from "nanoid"
 import { cors } from "hono/cors"
+import { nanoid } from "nanoid"
 
 import { Hono } from "hono"
 export interface Env {
@@ -9,9 +7,12 @@ export interface Env {
 }
 
 const app = new Hono<{ Bindings: Env }>()
-app.use("/*", cors({
-  origin: "*",
-}))
+app.use(
+  "/*",
+  cors({
+    origin: "*",
+  })
+)
 
 app.get("/:projectId/capture", async (c) => {
   const id = nanoid()
