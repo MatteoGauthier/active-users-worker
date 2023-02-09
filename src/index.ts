@@ -42,4 +42,9 @@ app.get("/:projectId/live-usage", async (c) => {
   return c.json(views)
 })
 
+app.get("/global", async (c) => {
+  let views = await c.env.VIEWS.list()
+  return c.json(views)
+})
+
 export default app
