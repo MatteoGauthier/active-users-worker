@@ -12,5 +12,9 @@
     "start": "wrangler dev",
     "deploy": "wrangler publish",
     "test": "vitest"
+  },
+  "dependencies": {
+    "hono": "^2.7.6",
+    "nanoid": "^4.0.1"
   }
 }
