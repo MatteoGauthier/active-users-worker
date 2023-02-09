@@ -40,7 +40,7 @@ app.get("/:projectId/capture", async (c) => {
   })
 })
 
-app.get("/:projectId/live-usage", async (c) => {
+app.get("/:projectId/stats", async (c) => {
   let views = await c.env.VIEWS.list({
     prefix: `${c.req.param().projectId}:`,
   })
