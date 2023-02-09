@@ -20,7 +20,7 @@ app.get("/:projectId/capture", async (c) => {
 
   const geo = c.req.cf as any
 
-  let value = await c.env.VIEWS.put(key, `_v${key}`, {
+  let value = await c.env.VIEWS.put(key, `v_${key}`, {
     metadata: {
       time: new Date().toISOString(),
       ip: c.req.headers.get("CF-Connecting-IP") || "unknown",
